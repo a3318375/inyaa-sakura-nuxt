@@ -3,35 +3,6 @@ type: docker
 name: default
 
 steps:
-  - name: restore-cache
-    image: drillster/drone-volume-cache
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      restore: true
-      mount:
-        - ./node_modules
-        - ./yarn.lock
-  - name: build
-    image: node:latest
-    volumes:
-      - name: cache
-        path: /cache
-    commands:
-      - yarn config set registry https://registry.npm.taobao.org
-      - yarn
-      - yarn build
-  - name: rebuild-cache
-    image: drillster/drone-volume-cache
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      rebuild: true
-      mount:
-        - ./node_modules
-        - ./yarn.lock
   - name: docker
     image: plugins/docker
     settings:
@@ -60,7 +31,3 @@ steps:
         - echo =======开始部署应用=======
         - docker run -d -p 3000:3000 --name inyaa-sakura-nuxt --network inyaa --network-alias inyaa-sakura-nuxt ccr.ccs.tencentyun.com/inyaa/inyaa-sakura-nuxt:latest
         - echo =======部署成功=======
-volumes:
-  - name: cache
-    host:
-      path: /tmp/cache

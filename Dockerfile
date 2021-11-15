@@ -1,6 +1,9 @@
-FROM node:latest
+FROM node:16-alpine3.14
 WORKDIR /home
-ADD .output output
+ADD . .
+RUN yarn config set registry https://registry.npm.taobao.org
+RUN yarn
+RUN yarn build
 EXPOSE 3000
-CMD ["node", "output/server/index.mjs"]
+CMD ["yarn", "start"]
 
