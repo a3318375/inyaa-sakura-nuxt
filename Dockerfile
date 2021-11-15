@@ -1,8 +1,6 @@
-FROM node:16-alpine3.14
+FROM node:latest
 WORKDIR /home
-ADD . .
-RUN yarn install
-RUN yarn build
+ADD .output output
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD ["node", "output/server/index.mjs"]
 
