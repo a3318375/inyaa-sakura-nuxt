@@ -58,7 +58,7 @@ steps:
         - docker rm -f $(docker ps -a | grep inyaa-sakura-nuxt | awk '{print $1}')
         - docker rmi $(docker images | grep inyaa-sakura-nuxt | awk '{print $3}')
         - echo =======开始部署应用=======
-        - docker run -d -p 3000:3000 --name inyaa-sakura-nuxt ccr.ccs.tencentyun.com/inyaa/inyaa-sakura-nuxt:latest
+        - docker run -d -p 3000:3000 --name inyaa-sakura-nuxt --network inyaa --network-alias inyaa-sakura-nuxt ccr.ccs.tencentyun.com/inyaa/inyaa-sakura-nuxt:latest
         - echo =======部署成功=======
 volumes:
   - name: cache
