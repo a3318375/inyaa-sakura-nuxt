@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "nuxt-windicss": "^2.0.4",
+    "nuxt3": "^3.0.0-27277498.850ef69",
+    "vue-dompurify-html": "^2.3.0"
+  },
+  "dependencies": {
+    "@headlessui/vue": "dev",
+    "@heroicons/vue": "^1.0.5",
+    "@nuxt/devalue": "^2.0.0",
+    "@nuxtjs/dayjs": "^1.4.1",
+    "highlight.js": "^11.3.1",
+    "markdown-it": "^12.2.0",
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-highlight-lines": "^1.0.2",
+    "markdown-it-latex": "^0.2.0",
+    "markdown-it-latex2img": "^0.0.6",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "sanitize-html": "^2.5.3"
+  }
+}
