@@ -1,7 +1,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
     <div class="h-screen w-full py-10 text-center">
-        <div class="relative md:w-1/2 inset-x-0 top-24/50 text-center justify-items-center inline-grid gap-6">
+        <div class="hidden sm:inline-grid relative md:w-1/2 inset-x-0 top-24/50 text-center justify-items-center gap-6">
             <div>
                 <img class="inline-block h-14 w-14 rounded-full" src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg" />
             </div>

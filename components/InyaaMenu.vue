@@ -6,15 +6,21 @@ const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
   imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      'https://media.inyaa.cn/none.png',
 }
-
+const { isLogin, login, logout } = useLogin()
+const { toOpen } = useLoginDialog()
 const data = useState("menuData", () => []);
-const userNavigation = [
+const userNavigation = isLogin.value ? [
   { name: '账号管理', href: '#' },
   { name: '账号设置', href: '#' },
   { name: '退出登陆', href: '#' },
-]
+] : [{ name: '登陆', href: 'login' }]
+
+function toLogin() {
+  console.log(1111)
+  toOpen()
+}
 
 function hideMenu() {
 }
@@ -24,6 +30,7 @@ onMounted(async () => {
 </script>
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
+  <InyaaDialog />
   <Disclosure as="nav" class="bg-white bg-opacity-80 border-b border-gray-200 w-full fixed top-0 z-50" v-slot="{ open }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
@@ -55,7 +62,10 @@ onMounted(async () => {
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
               <MenuItems class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                  <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
+                  <a v-if="item.href === 'login'" @click="toLogin" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
+                    {{ item.name }}
+                  </a>
+                  <a v-else :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
                     {{ item.name }}
                   </a>
                 </MenuItem>
@@ -82,14 +92,14 @@ onMounted(async () => {
       </div>
       <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4">
-          <div class="flex-shrink-0">
+          <div class="flex-shrink-0" v-if="isLogin">
             <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt=""/>
           </div>
-          <div class="ml-3">
+          <div class="ml-3" v-if="isLogin">
             <div class="text-base font-medium text-gray-800">{{ user.name }}</div>
             <div class="text-sm font-medium text-gray-500">{{ user.email }}</div>
           </div>
-          <button type="button" class="ml-auto bg-white flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button v-if="isLogin" type="button" class="ml-auto bg-white flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true"/>
           </button>
