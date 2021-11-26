@@ -2,13 +2,35 @@
 import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { CheckIcon } from '@heroicons/vue/outline'
 const { open, toClose } = useLoginDialog()
+const oldUrl = useCookie('oldUrl')
+const user = useCookie('user')
 
 function qqLogin() {
   window.location.href = 'https://inyaa.cn/inyaa-gateway/inyaa-web/oauth2/authorization/qq'
 }
 function githubLogin() {
-  window.location.href = 'https://inyaa.cn/inyaa-gateway/inyaa-web/oauth2/authorization/github'
+  oldUrl.value = window.location.href
+  window.location.href = 'https://api.inyaa.cn/inyaa-web/oauth2/authorization/github'
 }
+console.log(oldUrl)
+console.log(user)
+onMounted(async () => {
+  if (oldUrl && oldUrl.value) {
+    if (!user && !user.value) {
+      const data = await useFetch('/user', {
+        baseURL: 'https://api.inyaa.cn/inyaa-web',
+        method: 'GET'
+      })
+      if(data){
+        user.value = data.data
+      }
+    }
+    console.log('oldUrl', oldUrl)
+    const jumpUrl = oldUrl
+    oldUrl.value = null
+    window.location.href = jumpUrl
+  }
+});
 </script>
 
 <template>
