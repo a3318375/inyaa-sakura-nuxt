@@ -23,7 +23,7 @@ const { data } = await useAsyncData('blogList', () => $fetch('/api/blog/list', {
     size: 10,
   },
 }))
-blogList.value = [...blogList.value, ...data.value.content]
+blogList.value = data.value.content
 </script>
 
 <template>
