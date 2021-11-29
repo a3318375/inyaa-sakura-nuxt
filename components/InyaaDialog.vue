@@ -15,7 +15,9 @@ function githubLogin() {
 console.log(1, oldUrl)
 console.log(2, user)
 onMounted(async () => {
+  console.log(3, '初始化')
   if (oldUrl && oldUrl.value) {
+    console.log(4, '存在未跳转的链接')
     if (!user && !user.value) {
       const data = await useFetch('/user', {
         baseURL: 'https://api.inyaa.cn/inyaa-web',
@@ -24,11 +26,15 @@ onMounted(async () => {
       if(data){
         user.value = data.data
       }
+      console.log(5, '用户不存在', data)
+    }else{
+      console.log(6, '用户存在')
     }
     console.log('oldUrl', oldUrl)
-    const jumpUrl = oldUrl
+    const jumpUrl = oldUrl.value
+    console.log(7, '新链接', jumpUrl)
     oldUrl.value = null
-    window.location.href = jumpUrl.value
+    //window.location.href = jumpUrl
   }
 });
 </script>
