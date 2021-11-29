@@ -34,6 +34,7 @@ onMounted(async () => {
     const jumpUrl = oldUrl.value
     console.log(7, '新链接', jumpUrl)
     oldUrl.value = null
+    console.log(8, '旧链接', oldUrl)
     //window.location.href = jumpUrl
   }
 });
