@@ -12,8 +12,8 @@ function githubLogin() {
   oldUrl.value = window.location.href
   window.location.href = 'https://api.inyaa.cn/inyaa-web/oauth2/authorization/github'
 }
-console.log(oldUrl)
-console.log(user)
+console.log(1, oldUrl)
+console.log(2, user)
 onMounted(async () => {
   if (oldUrl && oldUrl.value) {
     if (!user && !user.value) {
@@ -28,7 +28,7 @@ onMounted(async () => {
     console.log('oldUrl', oldUrl)
     const jumpUrl = oldUrl
     oldUrl.value = null
-    window.location.href = jumpUrl
+    window.location.href = jumpUrl.value
   }
 });
 </script>
