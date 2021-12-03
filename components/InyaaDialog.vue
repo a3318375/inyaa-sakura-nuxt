@@ -24,6 +24,7 @@ onMounted(async () => {
         baseURL: 'https://api.inyaa.cn/inyaa-web',
         method: 'GET'
       })
+      console.log(4.5, data)
       if(data){
         user.value = data.data
       }
