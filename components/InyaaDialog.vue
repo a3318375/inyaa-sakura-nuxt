@@ -19,7 +19,7 @@ onMounted(async () => {
   console.log(3, '初始化')
   if (oldUrl && oldUrl.value) {
     console.log(4, '存在未跳转的链接')
-    if (!user && !user.value) {
+    if (!user || !user.value) {
       const data = await useFetch('/user', {
         baseURL: 'https://api.inyaa.cn/inyaa-web',
         method: 'GET'
