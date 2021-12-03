@@ -6,7 +6,7 @@ const oldUrl = useCookie('oldUrl')
 const user = useCookie('user')
 
 function qqLogin() {
-  window.location.href = 'https://inyaa.cn/inyaa-gateway/inyaa-web/oauth2/authorization/qq'
+  window.location.href = 'https://api.inyaa.cn/inyaa-web/oauth2/authorization/qq'
 }
 function githubLogin() {
   oldUrl.value = window.location.href
