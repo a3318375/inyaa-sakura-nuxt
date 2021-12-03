@@ -22,6 +22,7 @@ onMounted(async () => {
     if (!user || !user.value) {
       const data = await $fetch('/user', {
         baseURL: 'https://api.inyaa.cn/inyaa-web',
+        credentials: "include",
         method: 'GET'
       })
       console.log(4.5, data)
