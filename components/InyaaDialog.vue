@@ -31,9 +31,9 @@ onMounted(async () => {
         if (data) {
           console.log(4.5, data)
           user.value = {
-            name: data.data.principal.authorities.attributes.nickname,
+            name: data.data.principal.attributes.nickname,
             email: '',
-            imageUrl: data.data.principal.authorities.attributes.figureurl
+            imageUrl: data.data.principal.attributes.figureurl
           }
         }
       } else {
