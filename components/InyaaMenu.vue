@@ -1,12 +1,14 @@
 <script setup>
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/vue/outline'
-
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-      'https://media.inyaa.cn/none.png',
+const user = useCookie('user')
+if (!user || !user.value) {
+  user.value = {
+    name: 'Tom Cook',
+    email: 'tom@example.com',
+    imageUrl:
+        'https://media.inyaa.cn/none.png',
+  }
 }
 const { isLogin, login, logout } = useLogin()
 const { toOpen } = useLoginDialog()

@@ -4,6 +4,7 @@ import { CheckIcon } from '@heroicons/vue/outline'
 const { open, toClose } = useLoginDialog()
 const oldUrl = useCookie('oldUrl')
 const user = useCookie('user')
+const { isLogin, login, logout } = useLogin()
 
 function qqLogin() {
   oldUrl.value = window.location.href
@@ -16,29 +17,35 @@ function githubLogin() {
 console.log(1, oldUrl)
 console.log(2, user)
 onMounted(async () => {
-  console.log(3, '初始化')
-  if (oldUrl && oldUrl.value) {
-    console.log(4, '存在未跳转的链接')
-    if (!user || !user.value) {
-      const data = await $fetch('/user', {
-        baseURL: 'https://api.inyaa.cn/inyaa-web',
-        credentials: "include",
-        method: 'GET'
-      })
-      console.log(4.5, data)
-      if(data){
-        user.value = data.data
+  if (!isLogin) {
+    console.log(3, '初始化')
+    if (oldUrl && oldUrl.value) {
+      console.log(4, '存在未跳转的链接')
+      if (!user || !user.value) {
+        const data = await $fetch('/user', {
+          baseURL: 'https://api.inyaa.cn/inyaa-web',
+          credentials: "include",
+          method: 'GET'
+        })
+        if (data) {
+          console.log(4.5, data)
+          user.value = {
+            name: data.data.principal.authorities.attributes.nickname,
+            email: '',
+            imageUrl: data.data.principal.authorities.attributes.figureurl
+          }
+        }
+      } else {
+        console.log(6, '用户存在')
       }
-      console.log(5, '用户不存在', data)
-    }else{
-      console.log(6, '用户存在')
+      console.log('oldUrl', oldUrl)
+      const jumpUrl = oldUrl.value
+      console.log(7, '新链接', jumpUrl)
+      oldUrl.value = null
+      console.log(8, '旧链接', oldUrl)
+      login()
+      //window.location.href = jumpUrl
     }
-    console.log('oldUrl', oldUrl)
-    const jumpUrl = oldUrl.value
-    console.log(7, '新链接', jumpUrl)
-    oldUrl.value = null
-    console.log(8, '旧链接', oldUrl)
-    //window.location.href = jumpUrl
   }
 });
 </script>
