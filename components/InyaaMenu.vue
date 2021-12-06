@@ -2,6 +2,8 @@
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/vue/outline'
 const user = useCookie('user')
+const isLogin = useCookie('isLogin')
+isLogin.value = isLogin.value || false
 let userInfo = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -12,7 +14,6 @@ if (user && user.value) {
   userInfo = user.value
 }
 
-const { isLogin, login, logout } = useLogin()
 const { toOpen } = useLoginDialog()
 const data = useState("menuData", () => []);
 const userNavigation = isLogin.value ? [

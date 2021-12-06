@@ -4,7 +4,8 @@ import { CheckIcon } from '@heroicons/vue/outline'
 const { open, toClose } = useLoginDialog()
 const oldUrl = useCookie('oldUrl')
 const user = useCookie('user')
-const { isLogin, login, logout } = useLogin()
+const isLogin = useCookie('isLogin')
+isLogin.value = isLogin.value || false
 
 function qqLogin() {
   oldUrl.value = window.location.href
@@ -44,7 +45,7 @@ onMounted(async () => {
       console.log(7, '新链接', jumpUrl)
       oldUrl.value = null
       console.log(8, '旧链接', oldUrl)
-      login()
+      isLogin.value = true
       //window.location.href = jumpUrl
     }
   }
