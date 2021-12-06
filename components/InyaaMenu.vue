@@ -2,14 +2,16 @@
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/vue/outline'
 const user = useCookie('user')
-if (!user || !user.value) {
-  user.value = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-        'https://media.inyaa.cn/none.png',
-  }
+let userInfo = {
+  name: 'Tom Cook',
+  email: 'tom@example.com',
+  imageUrl:
+      'https://media.inyaa.cn/none.png',
 }
+if (user && user.value) {
+  userInfo = user.value
+}
+
 const { isLogin, login, logout } = useLogin()
 const { toOpen } = useLoginDialog()
 const data = useState("menuData", () => []);
@@ -58,7 +60,7 @@ onMounted(async () => {
             <div>
               <MenuButton class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt=""/>
+                <img class="h-8 w-8 rounded-full" :src="userInfo.imageUrl" alt=""/>
               </MenuButton>
             </div>
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
@@ -95,11 +97,11 @@ onMounted(async () => {
       <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4">
           <div class="flex-shrink-0" v-if="isLogin">
-            <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt=""/>
+            <img class="h-10 w-10 rounded-full" :src="userInfo.imageUrl" alt=""/>
           </div>
           <div class="ml-3" v-if="isLogin">
-            <div class="text-base font-medium text-gray-800">{{ user.name }}</div>
-            <div class="text-sm font-medium text-gray-500">{{ user.email }}</div>
+            <div class="text-base font-medium text-gray-800">{{ userInfo.name }}</div>
+            <div class="text-sm font-medium text-gray-500">{{ userInfo.email }}</div>
           </div>
           <button v-if="isLogin" type="button" class="ml-auto bg-white flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="sr-only">View notifications</span>
