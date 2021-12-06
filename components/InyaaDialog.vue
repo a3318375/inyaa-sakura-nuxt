@@ -46,7 +46,7 @@ onMounted(async () => {
       oldUrl.value = null
       console.log(8, '旧链接', oldUrl)
       isLogin.value = true
-      //window.location.href = jumpUrl
+      window.location.href = jumpUrl
     }
   }
 });

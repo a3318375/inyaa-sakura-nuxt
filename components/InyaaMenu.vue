@@ -19,12 +19,18 @@ const data = useState("menuData", () => []);
 const userNavigation = isLogin.value ? [
   { name: '账号管理', href: '#' },
   { name: '账号设置', href: '#' },
-  { name: '退出登陆', href: '#' },
+  { name: '退出登陆', href: 'logout' },
 ] : [{ name: '登陆', href: 'login' }]
 
 function toLogin() {
-  console.log(1111)
+  console.log('开始登陆')
   toOpen()
+}
+function toLogout() {
+  console.log('开始退出')
+  isLogin.value = false
+  user.value = null
+  window.location.reload()
 }
 
 function hideMenu() {
@@ -68,6 +74,9 @@ onMounted(async () => {
               <MenuItems class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
                   <a v-if="item.href === 'login'" @click="toLogin" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
+                    {{ item.name }}
+                  </a>
+                  <a v-if="item.href === 'logout'" @click="toLogout" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
                     {{ item.name }}
                   </a>
                   <a v-else :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
