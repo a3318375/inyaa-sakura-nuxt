@@ -16,8 +16,9 @@ function githubLogin() {
 }
 console.log(1, oldUrl)
 console.log(2, user)
+console.log(2.5, isLogin)
 onMounted(async () => {
-  if (!isLogin) {
+  if (!isLogin.value) {
     console.log(3, '初始化')
     if (oldUrl && oldUrl.value) {
       console.log(4, '存在未跳转的链接')
