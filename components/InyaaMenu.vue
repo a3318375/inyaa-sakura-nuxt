@@ -76,7 +76,7 @@ onMounted(async () => {
                   <a v-if="item.href === 'login'" @click="toLogin" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
                     {{ item.name }}
                   </a>
-                  <a v-if="item.href === 'logout'" @click="toLogout" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
+                  <a v-else-if="item.href === 'logout'" @click="toLogout" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
                     {{ item.name }}
                   </a>
                   <a v-else :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">
