@@ -106,14 +106,14 @@ onMounted(async () => {
       </div>
       <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4">
-          <div class="flex-shrink-0" v-if="isLogin">
+          <div class="flex-shrink-0" v-if="isLogin.value">
             <img class="h-10 w-10 rounded-full" :src="userInfo.imageUrl" alt=""/>
           </div>
-          <div class="ml-3" v-if="isLogin">
+          <div class="ml-3" v-if="isLogin.value">
             <div class="text-base font-medium text-gray-800">{{ userInfo.name }}</div>
             <div class="text-sm font-medium text-gray-500">{{ userInfo.email }}</div>
           </div>
-          <button v-if="isLogin" type="button" class="ml-auto bg-white flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button v-if="isLogin.value" type="button" class="ml-auto bg-white flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true"/>
           </button>
