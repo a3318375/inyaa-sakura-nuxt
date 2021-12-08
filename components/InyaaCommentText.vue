@@ -1,19 +1,34 @@
-<!--
-  This example requires Tailwind CSS v2.0+
+<script setup>
+import {
+  EmojiHappyIcon,
+  EmojiSadIcon,
+  FireIcon,
+  HeartIcon,
+  PaperClipIcon,
+  ThumbUpIcon,
+  XIcon,
+} from '@heroicons/vue/solid'
+import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
+import {ref} from "vue";
+const moods = [
+  { name: 'Excited', value: 'excited', icon: FireIcon, iconColor: 'text-white', bgColor: 'bg-red-500' },
+  { name: 'Loved', value: 'loved', icon: HeartIcon, iconColor: 'text-white', bgColor: 'bg-pink-400' },
+  { name: 'Happy', value: 'happy', icon: EmojiHappyIcon, iconColor: 'text-white', bgColor: 'bg-green-400' },
+  { name: 'Sad', value: 'sad', icon: EmojiSadIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400' },
+  { name: 'Thumbsy', value: 'thumbsy', icon: ThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500' },
+  { name: 'I feel nothing', value: null, icon: XIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent' },
+]
+const selected = ref(moods[5])
+const user = useCookie('user')
 
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
+const commentText = ''
+const subComment = async() =>{
+  if (!user || !user.value) {
+    alert('请先登陆')
   }
-  ```
--->
+  console.log(commentText)
+}
+</script>
 <template>
   <div class="flex pt-4 items-start space-x-4 pb-">
     <div class="flex-shrink-0">
@@ -23,7 +38,7 @@
       <form action="#" class="relative">
         <div class="border border-gray-300 rounded-lg shadow-sm overflow-hidden">
           <label for="comment" class="sr-only">请输入你的评论</label>
-          <textarea rows="3" name="comment" id="comment" class="block w-full py-3 border-0 resize-none sm:text-sm focus:outline-none focus:border-2 focus:border-pink-300" placeholder="Add your comment..." />
+          <textarea rows="3" name="comment" v-model="commentText" id="comment" class="block w-full py-3 border-0 resize-none sm:text-sm focus:outline-none focus:border-2 focus:border-pink-300" placeholder="Add your comment..." />
 
           <!-- Spacer element to match the height of the toolbar -->
           <div class="py-2" aria-hidden="true">
@@ -86,7 +101,7 @@
             </div>
           </div>
           <div class="flex-shrink-0">
-            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button type="button" @click="subComment" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               发送
             </button>
           </div>
@@ -95,46 +110,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { ref } from 'vue'
-import {
-  EmojiHappyIcon,
-  EmojiSadIcon,
-  FireIcon,
-  HeartIcon,
-  PaperClipIcon,
-  ThumbUpIcon,
-  XIcon,
-} from '@heroicons/vue/solid'
-import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
-
-const moods = [
-  { name: 'Excited', value: 'excited', icon: FireIcon, iconColor: 'text-white', bgColor: 'bg-red-500' },
-  { name: 'Loved', value: 'loved', icon: HeartIcon, iconColor: 'text-white', bgColor: 'bg-pink-400' },
-  { name: 'Happy', value: 'happy', icon: EmojiHappyIcon, iconColor: 'text-white', bgColor: 'bg-green-400' },
-  { name: 'Sad', value: 'sad', icon: EmojiSadIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400' },
-  { name: 'Thumbsy', value: 'thumbsy', icon: ThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500' },
-  { name: 'I feel nothing', value: null, icon: XIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent' },
-]
-
-export default {
-  components: {
-    Listbox,
-    ListboxButton,
-    ListboxLabel,
-    ListboxOption,
-    ListboxOptions,
-    EmojiHappyIcon,
-    PaperClipIcon,
-  },
-  setup() {
-    const selected = ref(moods[5])
-
-    return {
-      moods,
-      selected,
-    }
-  },
-}
-</script>

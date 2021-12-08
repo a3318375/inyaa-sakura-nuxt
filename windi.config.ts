@@ -19,5 +19,6 @@ export default defineConfig({
   },
   plugins: [
     require('windicss/plugin/typography'),
+    require('windicss/plugin/forms'),
   ],
 })
