@@ -22,7 +22,7 @@ const selected = ref(moods[5])
 const user = useCookie('user')
 const route = useRoute();
 const commentText = useState('commentText', () => '')
-const subComment = async() =>{
+const subComment = async() => {
   if (!user || !user.value) {
     alert('请先登陆')
   }
@@ -38,6 +38,8 @@ const subComment = async() =>{
     },
   })
   console.log(commentText)
+  commentText.value = ''
+  window.location.reload();
 }
 </script>
 <template>
