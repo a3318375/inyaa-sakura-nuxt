@@ -20,12 +20,23 @@ const moods = [
 ]
 const selected = ref(moods[5])
 const user = useCookie('user')
-
-const commentText = ''
+const route = useRoute();
+const commentText = useState('commentText', () => '')
 const subComment = async() =>{
   if (!user || !user.value) {
     alert('请先登陆')
   }
+  await $fetch('/blog/comment/save', {
+    baseURL: 'https://api.inyaa.cn/inyaa-web',
+    credentials: "include",
+    method: 'POST',
+    params: {
+      userId: user.value.id,
+      toUserId: 0,
+      content: commentText.value,
+      blogId: route.params.id,
+    },
+  })
   console.log(commentText)
 }
 </script>

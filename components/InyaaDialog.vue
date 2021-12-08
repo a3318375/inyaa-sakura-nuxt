@@ -32,6 +32,7 @@ onMounted(async () => {
         if (data) {
           console.log(4.5, data)
           user.value = {
+            id: data.data.id,
             name: data.data.otherNickname,
             email: '',
             imageUrl: data.data.avatar
