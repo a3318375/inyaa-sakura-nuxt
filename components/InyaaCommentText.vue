@@ -30,7 +30,7 @@ const subComment = async() =>{
     baseURL: 'https://api.inyaa.cn/inyaa-web',
     credentials: "include",
     method: 'POST',
-    params: {
+    body: {
       userId: user.value.id,
       toUserId: 0,
       content: commentText.value,
