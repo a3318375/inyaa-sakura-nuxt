@@ -39,7 +39,7 @@ onMounted(async () => {
 })
 
 function toCopy(e) {
-  navigator.clipboard.writeText(e.getAttribute('rel-data'));
+  navigator.clipboard.writeText(e.firstElementChild.innerHTML);
   toOpen()
 }
 function updateTop(){
