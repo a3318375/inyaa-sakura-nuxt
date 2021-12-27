@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "nuxt-windicss": "^2.0.4",
-    "nuxt3": "^3.0.0-27338323.1e98259",
+    "nuxt3": "^3.0.0-27313139.1c88580",
     "vue-dompurify-html": "^2.3.0"
   },
   "dependencies": {
