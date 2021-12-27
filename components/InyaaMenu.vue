@@ -1,6 +1,5 @@
 <script setup>
-import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
-import {BellIcon, MenuIcon, XIcon, SearchIcon} from '@heroicons/vue/outline'
+import { SearchIcon } from '@heroicons/vue/outline'
 const user = useCookie('user')
 const isLogin = useCookie('isLogin')
 isLogin.value = isLogin.value || false
