@@ -1,6 +1,5 @@
 <script setup>
 const nuxtApp = useNuxtApp();
-import { ChatAltIcon, TagIcon, UserCircleIcon } from "@heroicons/vue/solid";
 const { data } = await useFetch("/blog/web/archive/list", {
   baseURL: "https://www.inyaa.cn/inyaa-gateway/inyaa-admin",
   method: "GET",
@@ -131,10 +130,6 @@ const activity = [
                             py-px
                           "
                         >
-                          <ChatAltIcon
-                            class="h-5 w-5 text-gray-400"
-                            aria-hidden="true"
-                          />
                         </span>
                       </div>
                       <div class="min-w-0 flex-1">

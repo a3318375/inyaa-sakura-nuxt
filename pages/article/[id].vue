@@ -1,7 +1,4 @@
 <script setup>
-import {MenuIcon} from '@heroicons/vue/outline'
-import InyaaNotifications from "../../components/InyaaNotifications";
-
 const nuxtApp = useNuxtApp();
 const route = useRoute();
 const {toOpen} = useDialog()
@@ -110,8 +107,8 @@ function updateTopAll(){
         <div id="TOC-btn">
           <div class="position-relative">
             <div class="p-2 text-white">
-              <MenuIcon class="w-4 h-4 inline stroke-current"/>
-              目录
+              <div class="i-carbon-menu w-6 h-4 float-left" />
+              <div class="float-left">目录</div>
             </div>
             <div class="TOC-ctx" v-html="nuxtApp.$markit.topHtml">
             </div>

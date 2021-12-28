@@ -1,7 +1,4 @@
 <script setup>
-import { BookmarkIcon } from '@heroicons/vue/outline'
-import { PlusSmIcon } from '@heroicons/vue/solid'
-
 let pageNum = 1
 const blogList = useState('blogList', () => [])
 
@@ -29,7 +26,7 @@ blogList.value = data.value.content
 <template>
   <div class="text-center">
     <div class="inline-grid gap-6 px-5 bg-white bg-opacity-80">
-      <h1 class="pt-8 pb-2 pl-0"><BookmarkIcon class="float-left h-6 w-6" aria-hidden="true" /> <span class="float-left">Discovery</span></h1>
+      <h1 class="pt-8 pb-2 pl-0"><div class="i-carbon-bookmark float-left h-6 w-6" /> <span class="float-left">Discovery</span></h1>
         <div  v-for="item in blogList" :key="item.id" class="max-w-md mx-auto bg-white rounded-xl hover:shadow-lg overflow-hidden md:max-w-4xl">
           <div class="md:flex">
               <div class="md:flex-shrink-0">

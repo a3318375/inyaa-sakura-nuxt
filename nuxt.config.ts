@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   ],
   buildModules: [
     'nuxt-windicss',
+    '@unocss/nuxt',
   ],
   meta: {
     script: [
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
     '~/assets/github.css',
     '~/assets/sakura.css',
   ],
+  unocss: {
+    icons: true
+  },
   dayjs: {
     locales: ['zh-cn'],
     defaultLocale: ['zh-cn'],

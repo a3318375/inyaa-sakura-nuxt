@@ -6,13 +6,15 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@unocss/nuxt": "^0.16.4",
+    "@unocss/preset-icons": "^0.19.0",
+    "@iconify-json/carbon": "^1.0.12",
     "nuxt-windicss": "^2.0.4",
     "nuxt3": "^3.0.0-27338323.1e98259",
     "vue-dompurify-html": "^2.3.0"
   },
   "dependencies": {
     "@headlessui/vue": "dev",
-    "@heroicons/vue": "^1.0.5",
     "@nuxt/devalue": "^2.0.0",
     "@nuxtjs/dayjs": "^1.4.1",
     "highlight.js": "^11.3.1",

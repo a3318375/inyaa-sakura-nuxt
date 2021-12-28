@@ -1,18 +1,5 @@
 <script setup>
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
-import {
-  ChatAltIcon,
-  CodeIcon,
-  DotsVerticalIcon,
-  EyeIcon,
-  FlagIcon,
-  PlusSmIcon,
-  SearchIcon,
-  ShareIcon,
-  StarIcon,
-  ThumbUpIcon,
-} from '@heroicons/vue/solid'
-import {BellIcon, MenuIcon, XIcon} from '@heroicons/vue/outline'
 const nuxtApp = useNuxtApp();
 const route = useRoute();
 const commonts = await $fetch('/blog/comment/list', {

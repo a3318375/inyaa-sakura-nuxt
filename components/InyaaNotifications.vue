@@ -1,6 +1,4 @@
 <script setup>
-import { CheckCircleIcon, ClipboardListIcon } from "@heroicons/vue/outline";
-import { XIcon } from "@heroicons/vue/solid";
 const { open, toClose } = useDialog()
 </script>
 
@@ -17,7 +15,7 @@ const { open, toClose } = useDialog()
       py-6
       pointer-events-none
       sm:p-6 sm:items-start
-      z-50
+      z-999
     "
   >
     <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
@@ -46,10 +44,7 @@ const { open, toClose } = useDialog()
           <div class="p-4">
             <div class="flex items-start">
               <div class="flex-shrink-0">
-                <CheckCircleIcon
-                  class="h-6 w-6 text-green-400"
-                  aria-hidden="true"
-                />
+                <div class="i-carbon-checkmark-filled h-6 w-6 text-green-400" />
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-medium text-gray-900">
@@ -75,7 +70,7 @@ const { open, toClose } = useDialog()
                   "
                 >
                   <span class="sr-only">Close</span>
-                  <XIcon class="h-5 w-5" aria-hidden="true" />
+                  <div class="i-carbon-misuse-alt h-5 w-5" aria-hidden="true"/>
                 </button>
               </div>
             </div>

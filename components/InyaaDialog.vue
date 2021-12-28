@@ -1,6 +1,5 @@
 <script setup>
 import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { CheckIcon } from '@heroicons/vue/outline'
 const { open, toClose } = useLoginDialog()
 const oldUrl = useCookie('oldUrl')
 const user = useCookie('user')
