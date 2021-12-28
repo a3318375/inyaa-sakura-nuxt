@@ -39,17 +39,32 @@ const activity = [
     date: "2h ago",
   },
 ];
+function updateTop(){
+  document.getElementById('divHover').style.top = '75%'
+  document.getElementById('divHover').style.transition = '0.5s'
+}
+
+function updateTopAll(){
+  document.getElementById('divHover').style.removeProperty('top')
+  document.getElementById('divHover').style.transition = '0.5s'
+}
 </script>
 
 <template>
   <div class="py-10 pt-17">
     <header>
       <div
-        class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative"
+          class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative"
+          @mouseover="updateTop"
+          @mouseleave="updateTopAll"
       >
-        <div class="bg-cover bg-center bg-no-repeat md:h-96"></div>
         <div
-          class="
+            class="bg-cover bg-center bg-no-repeat md:h-96"
+            :style="'background-image: url(' + data.cover + ')'"
+        ></div>
+        <div
+            id="divHover"
+            class="
             inset-0
             mx-auto
             absolute
@@ -61,7 +76,6 @@ const activity = [
             duration-500
             ease-in-out
             transform
-            hover:-translate-y-1 hover:top-3/4
           "
         >
           <h1 class="text-3xl text-white">关于</h1>

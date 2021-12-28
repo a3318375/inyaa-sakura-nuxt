@@ -55,7 +55,7 @@ function updateTopAll(){
   <div class="py-10 pt-17">
     <header>
       <div
-          class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative hover:-translate-y-1"
+          class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative"
           @mouseover="updateTop"
           @mouseleave="updateTopAll"
       >
