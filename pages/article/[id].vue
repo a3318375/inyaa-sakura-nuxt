@@ -61,7 +61,7 @@ function updateTopAll(){
       >
         <div
             class="bg-cover bg-center bg-no-repeat md:h-96"
-            :style="'background-image: url(' + data.cover + ')'"
+            :style="data.cover ? 'background-image: url(' + data.cover + ')' : ''"
         ></div>
         <div
             id="divHover"
@@ -98,7 +98,7 @@ function updateTopAll(){
         <!-- Replace with your content -->
         <div class="px-4 py-8 sm:px-0 bg-white bg-opacity-80">
           <div class="px-6 pt-4">
-            <div class="entry-content" v-html="nuxtApp.$markit.render(data.context)" >
+            <div class="entry-content" v-html="data.context ? nuxtApp.$markit.render(data.context): '' " >
             </div>
           </div>
           <InyaaComment/>
