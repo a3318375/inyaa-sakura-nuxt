@@ -87,8 +87,8 @@ function updateTopAll(){
                   src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg"
               />
             </span>
-            <span> bymoye </span>
-            <span>·</span>2021-02-28 <span>·</span>684 次阅读
+            <span> 瑶瑶 </span>
+            <span>·</span><span v-if="data.createTime">发布于 {{nuxtApp.$dayjs(data.createTime).fromNow()}}</span> <span>·</span> {{ data.views }} 次阅读
           </p>
         </div>
       </div>
