@@ -60,7 +60,6 @@ function updateTopAll(){
       >
         <div
             class="bg-cover bg-center bg-no-repeat md:h-96"
-            :style="'background-image: url(' + data.cover + ')'"
         ></div>
         <div
             id="divHover"
