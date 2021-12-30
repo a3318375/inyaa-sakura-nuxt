@@ -1,4 +1,6 @@
 <script setup>
+import {useMobileMenuHide} from "../composables/mobileMenuHide";
+
 const user = useCookie('user')
 const isLogin = useCookie('isLogin')
 isLogin.value = isLogin.value || false
@@ -47,10 +49,25 @@ function hideLoginMenu() {
 }
 
 const { show, updateShow, updateHide  } = useScroll();
+const { mobileMenuShow, updateMobileMenu } = useMobileMenuHide();
 </script>
 <template>
   <InyaaDialog />
-  <header :class="[show ? 'top-menu left-menu fixed h-75px w-95p hover:bg-white hover:bg-opacity-80 rounded-full z-888' : 'top-menu left-smenu fixed h-75px w-1/2 hover:bg-white hover:bg-opacity-80 rounded-full bg-white bg-opacity-80 z-888']">
+  <div :class="[ mobileMenuShow ? 'fixed pl-3 pt-3 z-888 md:hidden transition duration-300 transform translate-x-250px' : 'fixed pl-3 pt-3 z-888 md:hidden transition duration-300 transform translate-x-0']">
+    <div class="i-carbon-menu w-24px h-24px" @click="updateMobileMenu" v-if="!mobileMenuShow"/>
+    <div class="i-carbon-x w-24px h-24px" @click="updateMobileMenu" v-if="mobileMenuShow"/>
+  </div>
+  <div :class="[ mobileMenuShow ? 'fixed z-888 bg-white w-250px h-full transition duration-300 transform translate-x-0' : 'fixed z-888 bg-white w-250px h-full transition duration-300 transform -translate-x-250px']">
+    <div class="relative py-40px w-250px mx-75px text-center ">
+      <img class="rounded-full w-100px h-100px" src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg" />
+    </div>
+    <ul>
+      <li v-for="menu in data" class="text-center py-1">
+        <a :href="menu.path">{{ menu.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <header :class="[show ? 'top-menu left-menu fixed h-75px w-95p hidden md:block hover:bg-white hover:bg-opacity-80 rounded-full z-888' : 'top-menu left-smenu fixed h-75px w-1/2 hidden md:block hover:bg-white hover:bg-opacity-80 rounded-full bg-white bg-opacity-80 z-888']">
     <div class="px-20px">
       <div class="group float-right ml-20px mt-22px relative" @mouseover="showLoginMenu" @mouseleave="hideLoginMenu">
         <img class="faa-shake animated-hover" src="https://media.inyaa.cn/none.png" width="24" height="24" @click="toLogin">

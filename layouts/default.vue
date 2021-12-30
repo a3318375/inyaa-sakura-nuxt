@@ -1,4 +1,6 @@
 <script setup>
+import {useMobileMenuHide} from "../composables/mobileMenuHide";
+
 const { show, updateShow, updateHide  } = useScroll();
 function handleScroll() {
   const scrollTop =
@@ -44,14 +46,15 @@ function initAudio() {
     ]
   });
 }
+const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenuHide();
 </script>
 
 <template>
   <img  @scroll="handleScroll" :class="[show ? 'fixed w-full h-full object-cover -z-999' : 'fixed filter blur-sm w-full h-full object-cover -z-999']" src="https://media.inyaa.cn/cover/7037ade43b1e484eac903a111b7ea709.jpg" >
-  <div id="aplayer"></div>
-  <div class="Canvas" style="position: fixed; opacity: 1; right: -300px; bottom: -100px; pointer-events: none;" id="L2dCanvas"></div>
-  <div class="min-h-full">
-    <InyaaMenu />
+  <div id="aplayer" class="hidden md:block"></div>
+  <div class="Canvas hidden md:block" style="position: fixed; opacity: 1; right: -300px; bottom: -100px; pointer-events: none;" id="L2dCanvas"></div>
+  <InyaaMenu />
+  <div :class="[mobileMenuShow ? 'min-h-full transition duration-300 transform translate-x-250px' : 'min-h-full transition duration-300 transform translate-x-0']" @click="updateMobileMenuHide">
     <slot />
     <InyaaFooter />
   </div>

@@ -1,4 +1,7 @@
 <script setup>
+import {useMobileMenuHide} from "../../composables/mobileMenuHide";
+import {useArticleMouseover} from "../../composables/articleMouseover";
+
 const nuxtApp = useNuxtApp();
 const route = useRoute();
 const {toOpen} = useDialog()
@@ -39,47 +42,25 @@ function toCopy(e) {
   navigator.clipboard.writeText(e.firstElementChild.innerHTML);
   toOpen()
 }
-function updateTop(){
-  document.getElementById('divHover').style.top = '75%'
-  document.getElementById('divHover').style.transition = '0.5s'
-}
-
-function updateTopAll(){
-  document.getElementById('divHover').style.removeProperty('top')
-  document.getElementById('divHover').style.transition = '0.5s'
-}
+const { articleMouseoverShow, updateArticleMouseoverShow, updateArticleMouseoverHide  } = useArticleMouseover();
+updateArticleMouseoverShow()
 </script>
 
 <template>
   <InyaaNotifications/>
-  <div class="py-10 pt-17">
+  <div class="pb-10 md:py-10 md:pt-17">
     <header>
       <div
           class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative"
-          @mouseover="updateTop"
-          @mouseleave="updateTopAll"
+          @mouseover="updateArticleMouseoverHide"
+          @mouseleave="updateArticleMouseoverShow"
       >
         <div
-            class="bg-cover bg-center bg-no-repeat md:h-96"
+            class="bg-cover bg-center bg-no-repeat h-96"
             :style="data.cover ? 'background-image: url(' + data.cover + ')' : ''"
         ></div>
-        <div
-            id="divHover"
-            class="
-            inset-0
-            mx-auto
-            absolute
-            flex flex-col
-            text-center
-            justify-center
-            backdrop-filter backdrop-blur
-            transition
-            duration-500
-            ease-in-out
-            transform
-          "
-        >
-          <h1 class="text-3xl text-white">{{ data.title }}</h1>
+        <div  :class="[articleMouseoverShow ? 'inset-0 mx-auto absolute flex flex-col text-center justify-center backdrop-filter backdrop-blur transition duration-500 ease-in-out transform': 'inset-0 mx-auto absolute flex flex-col text-center justify-center backdrop-filter backdrop-blur transition duration-500 ease-in-out transform md:top-3/4']">
+          <h1 class="text-3xl text-white">{{ data.title }}<div class="i-carbon-copy hidden" /></h1>
           <p class="text-white">
             <span>
               <img
@@ -99,6 +80,32 @@ function updateTopAll(){
         <div class="px-4 py-8 sm:px-0 bg-white bg-opacity-80">
           <div class="px-6 pt-4">
             <div class="entry-content" v-html="data.context ? nuxtApp.$markit.render(data.context): '' " >
+            </div>
+          </div>
+          <div class="mt-6 px-6 md:px-0 md:pl-6 md:w-1/2 md:inline-block" v-if="data.previousBlog">
+            <div class="h-150px bg-black">
+              <a :href="'/article/' + data.previousBlog.id">
+                <div class="w-full h-full text-center mt-4 bg-cover bg-center bg-no-repeat opacity-40"
+                    :style="data.previousBlog.cover ? 'background-image: url(' + data.previousBlog.cover + ')' : ''">
+                  <span>上一篇</span>
+                  <div>
+                    <h3>{{ data.previousBlog.title }}</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 px-6 md:px-0 md:pr-6 md:w-1/2 md:inline-block" v-if="data.nextBlog">
+            <div class="h-150px bg-black">
+              <a :href="'/article/' + data.nextBlog.id">
+                <div class="w-full h-full text-center mt-4 bg-cover bg-center bg-no-repeat opacity-40"
+                    :style="data.nextBlog.cover ? 'background-image: url(' + data.nextBlog.cover + ')' : ''">
+                  <span class="text-white z-50">下一篇</span>
+                  <div>
+                    <h3 class="text-white z-50">{{ data.nextBlog.title }}</h3>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
           <InyaaComment/>

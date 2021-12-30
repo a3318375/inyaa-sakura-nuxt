@@ -1,4 +1,6 @@
 <script setup>
+import {useArticleMouseover} from "../composables/articleMouseover";
+
 useMeta({
   title: '关于我',
   link: [
@@ -9,15 +11,8 @@ useMeta({
     { name: 'description', content: '瑶瑶的梦中小屋，一个个人小站.' },
   ],
 })
-function updateTop(){
-  document.getElementById('divHover').style.top = '75%'
-  document.getElementById('divHover').style.transition = '0.5s'
-}
-
-function updateTopAll(){
-  document.getElementById('divHover').style.removeProperty('top')
-  document.getElementById('divHover').style.transition = '0.5s'
-}
+const { articleMouseoverShow, updateArticleMouseoverShow, updateArticleMouseoverHide  } = useArticleMouseover();
+updateArticleMouseoverShow()
 </script>
 
 <template>
@@ -25,28 +20,13 @@ function updateTopAll(){
     <header>
       <div
           class="max-w-5xl mx-auto bg-white bg-opacity-80 flex flex-col relative"
-          @mouseover="updateTop"
-          @mouseleave="updateTopAll"
+          @mouseover="updateArticleMouseoverHide"
+          @mouseleave="updateArticleMouseoverShow"
       >
         <div
             class="bg-cover bg-center bg-no-repeat md:h-96"
         ></div>
-        <div
-            id="divHover"
-            class="
-            inset-0
-            mx-auto
-            absolute
-            flex flex-col
-            text-center
-            justify-center
-            backdrop-filter backdrop-blur
-            transition
-            duration-500
-            ease-in-out
-            transform
-          "
-        >
+        <div  :class="[articleMouseoverShow ? 'inset-0 mx-auto absolute flex flex-col text-center justify-center backdrop-filter backdrop-blur transition duration-500 ease-in-out transform': 'inset-0 mx-auto absolute flex flex-col text-center justify-center backdrop-filter backdrop-blur transition duration-500 ease-in-out transform md:top-3/4']">
           <h1 class="text-3xl text-white">关于</h1>
           <p class="text-white">
             <span>
