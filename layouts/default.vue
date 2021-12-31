@@ -27,6 +27,9 @@ onMounted(async () => {
       'https://cdn.jsdelivr.net/npm/live2dv3@latest/assets/biaoqiang_3/sounds/demo.mp3' // 也可以是网址
     ]
   })
+  if (window.innerWidth < 768) {
+
+  }
 });
 //filter blur-sm
 function initAudio() {
@@ -50,12 +53,11 @@ const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenu
 </script>
 
 <template>
-  <img  @scroll="handleScroll" :class="[show ? 'fixed w-full h-full object-cover -z-999 hidden md:block' : 'fixed filter blur-sm w-full h-full object-cover -z-999 hidden md:block']" src="https://media.inyaa.cn/cover/7037ade43b1e484eac903a111b7ea709.jpg" >
-  <img  @scroll="handleScroll" :class="[show ? 'fixed w-full h-full object-cover -z-999 md:hidden' : 'fixed filter blur-sm w-full h-full object-cover -z-999 md:hidden']" src="https://media.inyaa.cn/cover/14db2cf6e4b441368243b23722d212c9.png" >
+  <image  @scroll="handleScroll" x="-5" y="-5" :class="[show ? 'fixed w-full h-full object-cover -z-999 bg-img-mobile-default md:bg-img-default bg-no-repeat bg-cover' : 'fixed filter blur-sm w-full h-full object-cover -z-999 bg-img-mobile-default md:bg-img-default bg-no-repeat bg-cover']" />
   <div id="aplayer" class="hidden md:block"></div>
   <div class="Canvas hidden md:block" style="position: fixed; opacity: 1; right: -300px; bottom: -100px; pointer-events: none;" id="L2dCanvas"></div>
   <InyaaMenu />
-  <div :class="[mobileMenuShow ? 'min-h-full transition duration-300 transform translate-x-250px' : 'min-h-full transition duration-300 transform translate-x-0']" @click="updateMobileMenuHide">
+  <div :class="[mobileMenuShow ? 'min-h-full transition duration-300 transform translate-x-250px' : 'min-h-full transition duration-300']" @click="updateMobileMenuHide">
     <slot />
     <InyaaFooter />
   </div>

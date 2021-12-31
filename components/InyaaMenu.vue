@@ -57,7 +57,7 @@ const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenu
     <div class="i-carbon-menu w-24px h-24px" v-if="!mobileMenuShow"/>
     <div class="i-carbon-x w-24px h-24px" v-if="mobileMenuShow"/>
   </div>
-  <div :class="[ mobileMenuShow ? 'fixed z-777 bg-white w-250px h-full transition duration-300 transform translate-x-0' : 'fixed z-777 bg-white w-250px h-full transition duration-300 transform -translate-x-250px']">
+  <div :class="[ mobileMenuShow ? 'fixed z-777 bg-white w-250px h-full transition duration-300' : 'fixed z-777 bg-white w-250px h-full transition duration-300 transform -translate-x-250px']">
     <div class="py-40px w-250px mx-75px">
       <img class="rounded-full w-100px h-100px" src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg" />
     </div>
