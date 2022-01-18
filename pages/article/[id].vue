@@ -1,10 +1,8 @@
 <script setup>
-import {useMobileMenuHide} from "../../composables/mobileMenuHide";
-import {useArticleMouseover} from "../../composables/articleMouseover";
-
 const nuxtApp = useNuxtApp();
 const route = useRoute();
-const {toOpen} = useDialog()
+const { toOpen } = useDialog()
+const { tocShow, updateTocShow, updateTocHide } = useTocMenuHide();
 const {data} = await useAsyncData('blogInfo', () => $fetch('/blog/web/info', {
   parseResponse: JSON.parse,
   baseURL: 'https://www.inyaa.cn/inyaa-gateway/inyaa-admin',
@@ -110,16 +108,13 @@ updateArticleMouseoverShow()
           </div>
           <InyaaComment/>
         </div>
-        <!-- /End replace -->
-        <div id="TOC-btn">
-          <div class="position-relative">
-            <div class="p-2 text-white">
-              <div class="i-carbon-menu w-6 h-4 float-left" />
-              <div class="float-left">目录</div>
-            </div>
-            <div class="TOC-ctx" v-html="nuxtApp.$markit.topHtml">
-            </div>
-          </div>
+        <!-- 新目录 -->
+        <div :class="[tocShow ? 'fixed z-888 bg-white -right-240px top-120px w-240px duration-300 transform -translate-x-240px' : 'fixed z-888 bg-white -right-240px top-120px w-240px duration-300']">
+          <button type="button" class="absolute -left-39px bg-white pl-15px pr-10px py-10px rounded-bl-toc rounded-tl-toc focus:outline-none" @click="updateTocShow">
+            <div class="i-carbon-repeat w-14px h-20px"/>
+          </button>
+          <div class="py-10px px-15px">文章目录</div>
+          <div class="pb-15px px-15px" v-html="nuxtApp.$markit.topHtml"></div>
         </div>
       </div>
 

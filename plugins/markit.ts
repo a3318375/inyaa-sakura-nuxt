@@ -35,10 +35,11 @@ const markdownit = new mdit({
 markdownit.use(manchor);
 markdownit.use(highlightLines);
 markdownit.use(toc, {
-    containerId: 'TOC-text',
     containerClass: 'TOC-text',
     listClass: 'toc-list',
     itemClass: 'toc-list-item',
+    listType: 'ul',
+    linkClass: 'px-5px py-10px',
     callback: function (html, ast) {
         markdownit.topHtml = html
     }

@@ -21,6 +21,9 @@ export default defineConfig({
         'top-left-bg': '0px 0px',
       }
     },
+    borderRadius: {
+      'toc': '50%',
+    },
     minWidth: {
       '1/4': '25%',
     },
@@ -29,8 +32,4 @@ export default defineConfig({
       '95p': '95%'
     }
   },
-  plugins: [
-    require('windicss/plugin/typography'),
-    require('windicss/plugin/forms'),
-  ],
 })

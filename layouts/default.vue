@@ -1,6 +1,6 @@
 <script setup>
 import {useMobileMenuHide} from "../composables/mobileMenuHide";
-
+const { tocShow, updateTocShow, updateTocHide } = useTocMenuHide();
 const { show, updateShow, updateHide  } = useScroll();
 function handleScroll() {
   const scrollTop =
@@ -11,6 +11,7 @@ function handleScroll() {
   } else {
     updateShow()
   }
+  updateTocHide()
 }
 
 onMounted(async () => {

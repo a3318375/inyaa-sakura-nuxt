@@ -969,30 +969,24 @@
 }
 
 .TOC-text {
-  transform: scaleX(-1);
 }
 
 .toc-list {
-  margin         : 0;
-  padding-left   : 10px;
-  list-style-type: none;
-  -webkit-writing-mode   : horizontal-tb;
-  -ms-writing-mode   : lr-tb;
-  writing-mode   : horizontal-tb;
-  line-height    : 2.1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
 }
-
 .toc-list-item {
-  width             : 14rem;
-  text-overflow     : ellipsis;
-  display           : -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow          : hidden;
-  word-break        : break-all;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
 }
 
+.toc-list-item .toc-list {
+  text-indent: 20px;
+}
 .toc-list-item a {
-  color          : currentColor;
-  text-decoration: none;
+
 }
