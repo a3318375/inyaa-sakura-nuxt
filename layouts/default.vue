@@ -57,7 +57,7 @@ const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenu
   <image  @scroll="handleScroll" x="-5" y="-5" :class="[show ? 'fixed w-full h-full object-cover -z-999 bg-img-mobile-default md:bg-img-default bg-no-repeat bg-cover' : 'fixed filter blur-sm w-full h-full object-cover -z-999 bg-img-mobile-default md:bg-img-default bg-no-repeat bg-cover']" />
   <div id="aplayer" class="hidden md:block"></div>
   <div class="Canvas hidden md:block" style="position: fixed; opacity: 1; right: -300px; bottom: -100px; pointer-events: none;" id="L2dCanvas"></div>
-  <InyaaMenu />
+  <TailMenu />
   <div :class="[mobileMenuShow ? 'min-h-full transition duration-300 transform translate-x-250px' : 'min-h-full transition duration-300']" @click="updateMobileMenuHide">
     <slot />
     <InyaaFooter />
