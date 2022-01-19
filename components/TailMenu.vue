@@ -37,8 +37,27 @@ function hideMenu() {
 }
 onMounted(async () => {
   document.addEventListener("scroll", hideMenu);
+  initAudio();
 });
 const { show, updateShow, updateHide  } = useScroll();
+
+function initAudio() {
+  // 创建一个音乐播放器实例，并挂载到DOM上，同时进行相关配置
+  const ap = new APlayer({
+    container: document.getElementById("aplayer"),
+    listFolded: true,
+    audio: [ // 歌曲列表
+      {
+        name: "星茶会",
+        artist: "灰澈-星茶会",
+        url: "https://media.inyaa.cn/test_music.mp3",
+        cover: "http://imge.kugou.com/stdmusic/150/20200812/20200812134914113741.jpg",
+        lrc: "",
+        theme: "#baf",
+      },
+    ]
+  });
+}
 </script>
 <style scoped>
 .menu-avatar {
@@ -92,6 +111,9 @@ const { show, updateShow, updateHide  } = useScroll();
               <input id="search" name="search" :class="show ? 'menu-search-opacity' : 'menu-search'" placeholder="Search" type="search" />
             </div>
           </div>
+        </div>
+        <div class="hidden md:ml-4 md:flex md:items-center">
+          <div id="aplayer" class="hidden md:block"></div>
         </div>
         <div class="hidden md:ml-4 md:flex md:items-center">
           <button type="button" :class="[show? 'menu-notification':'bg-white menu-notification']">
