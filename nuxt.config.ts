@@ -20,12 +20,12 @@ export default defineNuxtConfig({
       { src: 'https://cdn.jsdelivr.net/npm/live2dv3@1.2.2/live2dv3.min.js' },
     ],
     link: [
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/a3318375/APlayer/dist/APlayer.min.css' },
     ],
   },
   css: [
     '~/assets/github.css',
     '~/assets/sakura.css',
-    '~/assets/Aplayer.min.css',
   ],
   unocss: {
     icons: true
