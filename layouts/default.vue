@@ -8,8 +8,16 @@ function handleScroll() {
   const myTop = document.body.scrollHeight;
   if (scrollTop > myTop / 10) {
     updateHide()
+    document.getElementsByClassName('aplayer-title')[0].style.color = '#666'
+    document.getElementsByClassName('aplayer-author')[0].style.color = '#666'
+    document.getElementsByClassName('aplayer-time-narrow')[0].style.color = '#666'
+    document.getElementsByClassName('aplayer-icon-volume-down')[0].firstChild.firstChild.style.fill = '#666'
   } else {
     updateShow()
+    document.getElementsByClassName('aplayer-title')[0].style.color = '#fff'
+    document.getElementsByClassName('aplayer-author')[0].style.color = '#fff'
+    document.getElementsByClassName('aplayer-time-narrow')[0].style.color = '#fff'
+    document.getElementsByClassName('aplayer-icon-volume-down')[0].firstChild.firstChild.style.fill = '#fff'
   }
   updateTocHide()
 }

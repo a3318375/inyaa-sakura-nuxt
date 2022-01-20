@@ -101,7 +101,7 @@ function initAudio() {
           </div>
 
         </div>
-        <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
+        <div class="flex-1 flex  items-center justify-center px-2 lg:ml-6 order-2 lg:justify-end">
           <div class="max-w-lg lg:max-w-xs">
             <label for="search" class="sr-only">Search</label>
             <div class="relative">
@@ -112,10 +112,10 @@ function initAudio() {
             </div>
           </div>
         </div>
-        <div class="hidden md:ml-4 md:flex md:items-center">
+        <div class="hidden md:ml-4 md:flex md:items-center md:order-1">
           <div id="aplayer" class="hidden md:block"></div>
         </div>
-        <div class="hidden md:ml-4 md:flex md:items-center">
+        <div class="hidden md:ml-4 md:flex md:items-center md:order-3">
           <button type="button" :class="[show? 'menu-notification':'bg-white menu-notification']">
             <span class="sr-only">View notifications</span>
             <div :class="[show ? 'i-carbon-notification w-6 h-6 bg-white' : 'i-carbon-notification w-6 h-6']" aria-hidden="true" />
