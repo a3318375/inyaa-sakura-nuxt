@@ -24,11 +24,11 @@ const {data} = await useAsyncData('blogInfo', () => $fetch('/blog/web/info', {
 useMeta({
   title: data.value? data.value.title : '瑶瑶的梦中小屋',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico'}
+    { rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico' }
   ],
   meta: [
-    { name: 'keywords', content: '瑶瑶,梦中小屋,瑶瑶的梦中小屋' },
-    { name: 'description', content: '瑶瑶的梦中小屋，一个个人小站.' },
+    { name: 'keywords', content: data.value? data.value.title : '瑶瑶的梦中小屋' },
+    { name: 'description', content: data.value? data.value.summary : '瑶瑶的梦中小屋，一个个人小站.' },
   ],
 })
 console.log(data.value.title)

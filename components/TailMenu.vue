@@ -1,7 +1,7 @@
 <script setup>
 import { Disclosure, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 const user = useCookie('user')
-const route = useRoute();
+const router = useRouter();
 const isLogin = useCookie('isLogin')
 isLogin.value = isLogin.value || false
 let userInfo = {
@@ -15,6 +15,7 @@ if (user && user.value) {
 }
 
 const { toOpen } = useLoginDialog()
+
 const data = useState("menuData", () => []);
 const userNavigation = isLogin.value ? [
   { name: '账号管理', href: '#' },
@@ -33,6 +34,12 @@ function toLogout() {
   window.location.reload()
 }
 
+const searchValue = useState("searchValue", () => []);
+function search() {
+  if (searchValue && searchValue.value) {
+    router.push('/search/' + searchValue.value);
+  }
+}
 function hideMenu() {
 }
 onMounted(async () => {
@@ -108,7 +115,7 @@ function initAudio() {
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <div :class="[show? 'i-carbon-search h-5 w-5 bg-white': 'i-carbon-search h-5 w-5']" aria-hidden="true" />
               </div>
-              <input id="search" name="search" :class="show ? 'menu-search-opacity' : 'menu-search'" placeholder="Search" type="search" />
+              <input id="search" name="search" v-model="searchValue" :class="show ? 'menu-search-opacity' : 'menu-search'" placeholder="Search" type="search" @keyup.enter="search"/>
             </div>
           </div>
         </div>

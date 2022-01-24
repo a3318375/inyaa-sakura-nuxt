@@ -32,9 +32,11 @@ function toLogout() {
   user.value = null
   window.location.reload()
 }
-
+const route = useRoute();
 function search() {
-
+  if (route.params.title) {
+    window.location.href = window.location.host + '/search/' + route.params.title;
+  }
 }
 function showLoginMenu() {
   document.getElementById('loginUserMenu').style.visibility = 'visible'
@@ -47,7 +49,6 @@ function hideLoginMenu() {
     document.getElementById('loginUserMenu').style.opacity = '0'
   }, 400);
 }
-
 const { show, updateShow, updateHide  } = useScroll();
 const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenuHide();
 </script>
