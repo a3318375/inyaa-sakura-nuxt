@@ -51,6 +51,7 @@ updateArticleMouseoverShow()
       <div class="max-w-5xl mx-auto">
         <!-- Replace with your content -->
         <div class="py-8 sm:px-0 bg-white bg-opacity-80">
+          <InyaaContent />
         </div>
         <!-- /End replace -->
       </div>
