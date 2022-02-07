@@ -27,6 +27,7 @@ useMeta({
     { rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico' }
   ],
   meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
     { name: 'keywords', content: data.value? data.value.title : '瑶瑶的梦中小屋' },
     { name: 'description', content: data.value? data.value.summary : '瑶瑶的梦中小屋，一个个人小站.' },
   ],

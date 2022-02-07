@@ -13,6 +13,7 @@ useMeta({
     {rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico'}
   ],
   meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
     { name: 'keywords', content: '搜索,包含关键字"' + route.params.title +'"的结果' },
     { name: 'description', content: '包含关键字"' + route.params.title +'"的结果' },
   ],
