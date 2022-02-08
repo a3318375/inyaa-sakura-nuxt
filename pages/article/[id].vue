@@ -84,23 +84,23 @@ updateArticleMouseoverShow()
           <div class="mt-6 px-6 md:px-0 md:pl-6 md:w-1/2 md:inline-block" v-if="data.previousBlog">
             <div class="h-150px bg-black">
               <a :href="'/article/' + data.previousBlog.id">
-                <div class="w-full h-full text-center mt-4 bg-cover bg-center bg-no-repeat opacity-40"
+                <div class="w-full h-full text-center bg-cover bg-center bg-no-repeat opacity-40"
                     :style="data.previousBlog.cover ? 'background-image: url(' + data.previousBlog.cover + ')' : ''">
-                  <span>上一篇</span>
-                  <div>
-                    <h3>{{ data.previousBlog.title }}</h3>
+                  <div class="pt-35px">
+                    <span class="text-white z-50">上一篇</span>
+                    <h3 class="text-white z-50">{{ data.previousBlog.title }}</h3>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="mt-6 px-6 md:px-0 md:pr-6 md:w-1/2 md:inline-block" v-if="data.nextBlog">
+          <div class="sm:mt-6 px-6 md:px-0 md:pr-6 md:w-1/2 md:inline-block" v-if="data.nextBlog">
             <div class="h-150px bg-black">
               <a :href="'/article/' + data.nextBlog.id">
-                <div class="w-full h-full text-center mt-4 bg-cover bg-center bg-no-repeat opacity-40"
+                <div class="w-full h-full text-center bg-cover bg-center bg-no-repeat opacity-40"
                     :style="data.nextBlog.cover ? 'background-image: url(' + data.nextBlog.cover + ')' : ''">
-                  <span class="text-white z-50">下一篇</span>
-                  <div>
+                  <div class="pt-35px">
+                    <span class="text-white z-50">下一篇</span>
                     <h3 class="text-white z-50">{{ data.nextBlog.title }}</h3>
                   </div>
                 </div>
