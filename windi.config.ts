@@ -32,4 +32,7 @@ export default defineConfig({
       '95p': '95%'
     }
   },
+  plugins: [
+    require('windicss/plugin/typography'),
+  ],
 })

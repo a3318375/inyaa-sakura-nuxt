@@ -64,10 +64,10 @@ function showBlur(type) {
 </script>
 <style scoped>
 .prev-bulr-hide {
-  @apply absolute z-50 top-0 left-0 w-full h-full text-center bg-cover bg-center bg-no-repeat opacity-40;
+  @apply absolute z-50 top-0 left-0 w-full h-full text-center bg-cover opacity-40;
 }
 .prev-bulr-show {
-  @apply absolute z-50 top-0 left-0 w-full h-full text-center bg-cover bg-center bg-no-repeat opacity-40 filter blur-sm;
+  @apply absolute z-50 top-0 left-0 w-full h-full text-center bg-cover opacity-40 filter blur-sm;
 }
 </style>
 <template>
@@ -106,8 +106,8 @@ function showBlur(type) {
         <!-- Replace with your content -->
         <div class="px-5 py-8 bg-white bg-opacity-80">
           <div class="pt-4">
-            <div class="entry-content" v-html="data.context ? nuxtApp.$markit.render(data.context): '' ">
-            </div>
+            <article class="prose max-w-none" v-html="data.context ? nuxtApp.$markit.render(data.context): '' ">
+            </article>
           </div>
           <section class="overflow-hidden w-full mt-6 rounded-xl bg-gray-400 h-150px">
             <div :class="[ data.nextBlog ? 'md:float-left md:w-1/2': 'md:float-left md:w-full' ]" v-if="data.previousBlog">
