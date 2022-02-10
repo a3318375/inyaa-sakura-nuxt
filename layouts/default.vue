@@ -1,10 +1,8 @@
 <script setup>
-import {useMobileMenuHide} from "../composables/mobileMenuHide";
 const { tocShow, updateTocShow, updateTocHide } = useTocMenuHide();
 const { show, updateShow, updateHide  } = useScroll();
 function handleScroll() {
-  const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   const myTop = document.body.scrollHeight;
   if (scrollTop > myTop / 10) {
     updateHide()
@@ -35,9 +33,6 @@ onMounted(async () => {
       'https://cdn.jsdelivr.net/npm/live2dv3@latest/assets/biaoqiang_3/sounds/demo.mp3' // 也可以是网址
     ]
   })
-  if (window.innerWidth < 768) {
-
-  }
 });
 //filter blur-sm
 const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenuHide();

@@ -1,6 +1,7 @@
 <script setup>
 import { Disclosure, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 const user = useCookie('user')
+const route = useRoute();
 const router = useRouter();
 const isLogin = useCookie('isLogin')
 isLogin.value = isLogin.value || false
@@ -40,10 +41,7 @@ function search() {
     router.push('/search/' + searchValue.value);
   }
 }
-function hideMenu() {
-}
 onMounted(async () => {
-  document.addEventListener("scroll", hideMenu);
   initAudio();
 });
 const { show, updateShow, updateHide  } = useScroll();
