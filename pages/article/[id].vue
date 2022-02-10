@@ -110,7 +110,7 @@ function showBlur(type) {
             </div>
           </div>
           <section class="overflow-hidden w-full mt-6 rounded-xl bg-gray-400 h-150px">
-            <div class="md:float-left md:w-1/2" v-if="data.previousBlog">
+            <div :class="[ data.nextBlog ? 'md:float-left md:w-1/2': 'md:float-left md:w-full' ]" v-if="data.previousBlog">
               <a :href="'/article/' + data.previousBlog.id" class="w-full h-150px relative inline-block pt-40px px-40px"
                  @mouseover="hideBlur(0)"
                  @mouseleave="showBlur(0)">
@@ -122,7 +122,7 @@ function showBlur(type) {
                 </div>
               </a>
             </div>
-            <div class="md:float-left md:w-1/2" v-if="data.nextBlog">
+            <div :class="[ data.previousBlog ? 'md:float-left md:w-1/2': 'md:float-left md:w-full' ]" v-if="data.nextBlog">
               <a :href="'/article/' + data.nextBlog.id" class="w-full h-150px relative inline-block pt-40px px-40px"
                  @mouseover="hideBlur(1)"
                  @mouseleave="showBlur(1)">
