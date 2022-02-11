@@ -17,6 +17,7 @@ if (route.params.title) {
 console.log('params', params)
 const nextPage = async () => {
   pageNum++
+  params.page = pageNum;
   const {content} = await $fetch('/api/blog/list', {
     method: "GET",
     params: params,

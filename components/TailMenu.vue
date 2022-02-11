@@ -4,6 +4,7 @@ const user = useCookie('user')
 const route = useRoute();
 const router = useRouter();
 const isLogin = useCookie('isLogin')
+console.log('isLogin', isLogin.value);
 isLogin.value = isLogin.value || false
 let userInfo = {
   name: 'Tom Cook',
@@ -130,8 +131,8 @@ function initAudio() {
             <div>
               <MenuButton :class="[show? 'menu-avatar' : 'text-gray-400 menu-avatar']">
                 <span class="sr-only">Open user menu</span>
-                <div :class="[show? 'i-carbon-user-avatar h-8 w-8 rounded-full bg-white':'i-carbon-user-avatar h-8 w-8 rounded-full']"/>
-<!--                <img class="h-8 w-8 rounded-full bg-white" src="https://media.inyaa.cn/none.png" alt="" />-->
+                <img v-if="isLogin" class="h-8 w-8 rounded-full bg-white" :src="userInfo.imageUrl" alt="" />
+                <div v-else :class="[show? 'i-carbon-user-avatar h-8 w-8 rounded-full bg-white':'i-carbon-user-avatar h-8 w-8 rounded-full']"/>
               </MenuButton>
             </div>
             <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
