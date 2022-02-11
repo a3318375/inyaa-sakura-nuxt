@@ -7,16 +7,16 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.0.12",
-    "@unocss/nuxt": "^0.16.4",
-    "@unocss/preset-icons": "^0.19.0",
+    "@unocss/nuxt": "^0.24.3",
+    "@unocss/preset-icons": "^0.24.3",
     "nuxt-windicss": "^2.2.4",
-    "nuxt3": "^3.0.0-27408580.aece351",
+    "nuxt3": "^3.0.0-27409701.61188e1",
     "vue-dompurify-html": "^2.3.0"
   },
   "dependencies": {
     "@headlessui/vue": "dev",
     "@nuxt/devalue": "^2.0.0",
-    "@nuxtjs/dayjs": "^1.4.1",
+    "dayjs": "^1.10.7",
     "highlight.js": "^11.3.1",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.4.1",

@@ -5,9 +5,6 @@ export default defineNuxtConfig({
   publicRuntimeConfig: {
     BASE_URL: process.env.BASE_URL
   },
-  modules: [
-    '@nuxtjs/dayjs',
-  ],
   buildModules: [
     'nuxt-windicss',
     '@unocss/nuxt',
@@ -29,10 +26,5 @@ export default defineNuxtConfig({
   ],
   unocss: {
     icons: true
-  },
-  dayjs: {
-    locales: ['zh-cn'],
-    defaultLocale: ['zh-cn'],
-    plugins: ['relativeTime'],
   },
 })
