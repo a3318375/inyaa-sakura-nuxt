@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export PORT=9000
+export NUXT_HOST=0.0.0.0
+/var/lang/node16/bin/node server/index.mjs

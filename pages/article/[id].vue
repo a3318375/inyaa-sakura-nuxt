@@ -91,7 +91,7 @@ function showBlur(type) {
             <span>
               <img
                   class="w-9 h-9 align-middle float-none inline rounded-full"
-                  src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg"
+                  src="https://media.inyaa.cn/icon/99db72d3abaaef4beece7e9f94b3623.jpg"
               />
             </span>
             <span> 瑶瑶 </span>

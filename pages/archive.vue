@@ -62,7 +62,7 @@ updateArticleMouseoverShow()
             <span>
               <img
                 class="w-9 h-9 align-middle float-none inline rounded-full"
-                src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg"
+                src="https://media.inyaa.cn/icon/99db72d3abaaef4beece7e9f94b3623.jpg"
               />
             </span>
             <span> bymoye </span>
@@ -108,7 +108,7 @@ updateArticleMouseoverShow()
                             justify-center
                             ring-8 ring-white
                           "
-                          src="https://media.inyaa.cn/99db72d3abaaef4beece7e9f94b3623.jpg"
+                          src="https://media.inyaa.cn/icon/99db72d3abaaef4beece7e9f94b3623.jpg"
                           alt=""
                         />
 
