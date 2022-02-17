@@ -420,10 +420,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@headlessui/vue@dev":
-  version "0.0.0-dev.50d9fd3"
-  resolved "https://registry.npmmirror.com/@headlessui/vue/download/@headlessui/vue-0.0.0-dev.50d9fd3.tgz#719a62e1acd62f721e9a7a3f128387f7af2f98e2"
-  integrity sha512-LyCxHzVqhfXla3jCR4neYxHTDmZcCrYcUgr5cNln3KXk/17fpn+3g1SRvVWFQBmRYsxTNPT4UeBzMmTCxVqWug==
+"@headlessui/vue@latest":
+  version "1.4.3"
+  resolved "https://registry.npmmirror.com/@headlessui/vue/-/vue-1.4.3.tgz#685898891cde4d8a38a01945d4d84855d5fe7224"
+  integrity sha512-cDAd3aP7jH5bO2WO4eSkyQQg0k6Zw8gobl+zL8LGApqix28EtlxultyKH/mVKnbo8Kiq6IDRzwP1HfKOf1QZbQ==
 
 "@iconify-json/carbon@^1.0.12":
   version "1.0.12"

@@ -14,7 +14,7 @@
     "vue-dompurify-html": "^2.3.0"
   },
   "dependencies": {
-    "@headlessui/vue": "dev",
+    "@headlessui/vue": "latest",
     "@nuxt/devalue": "^2.0.0",
     "dayjs": "^1.10.7",
     "highlight.js": "^11.3.1",
