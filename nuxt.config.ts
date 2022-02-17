@@ -21,8 +21,8 @@ export default defineNuxtConfig({
     ],
   },
   css: [
-    '~/assets/github.css',
-    '~/assets/sakura.css',
+    '~/assets/code.css',
+    'highlight.js/styles/vs2015.css',
   ],
   unocss: {
     icons: true
