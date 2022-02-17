@@ -4,7 +4,7 @@ import {useArticleMouseover} from "../composables/articleMouseover";
 useMeta({
   title: '关于我',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico'}
+    {rel: 'icon', href: 'https://media.inyaa.cn/icon/favicon.ico'}
   ],
   meta: [
     { name: 'keywords', content: '瑶瑶,梦中小屋,瑶瑶的梦中小屋' },

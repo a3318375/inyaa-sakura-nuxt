@@ -10,7 +10,7 @@ const { data } = await useFetch("/blog/web/archive/list", {
 useMeta({
   title: '搜索',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico'}
+    {rel: 'icon', href: 'https://media.inyaa.cn/icon/favicon.ico'}
   ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },

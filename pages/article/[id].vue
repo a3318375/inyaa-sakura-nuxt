@@ -24,7 +24,7 @@ const {data} = await useAsyncData('blogInfo', () => $fetch('/blog/web/info', {
 useMeta({
   title: data.value ? data.value.title : '瑶瑶的梦中小屋',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/favicon.ico'}
+    {rel: 'icon', href: 'https://media.inyaa.cn/icon/favicon.ico'}
   ],
   meta: [
     {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1'},
