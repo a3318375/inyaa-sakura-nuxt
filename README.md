@@ -1,6 +1,6 @@
 # inyaa-sakura-nuxt
 
-inyaa-sakura-nuxt是inyaa系列的博客前端采用了nuxt3，vue3，ts等技术，样式上参考了[Mashiro大佬的sakura](https://gitee.com/mashirozx/Sakura?_from=gitee_search)和[染川瞳大佬的基于sakura改版](https://gitee.com/mirai-mamori/Sakurairo?_from=gitee_search)，但是要说是硬扒样式，也没什么不对。
+inyaa-sakura-nuxt是inyaa系列的博客前端采用了nuxt3，vue3，ts等技术，样式上参考了[Mashiro大佬的sakura](https://https://github.com/a3318375/github-img/blob/main.com/mashirozx/Sakura?_from=https://github.com/a3318375/github-img/blob/main_search)和[染川瞳大佬的基于sakura改版](https://https://github.com/a3318375/github-img/blob/main.com/mirai-mamori/Sakurairo?_from=https://github.com/a3318375/github-img/blob/main_search)，但是要说是硬扒样式，也没什么不对。
 
 # 技术组成
 
@@ -52,14 +52,13 @@ $ http://localhost:3000
 
 # 页面展示
 
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110736.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110752.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110802.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110658.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110710.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110721.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110825.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110840.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110859.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110918.png)
-![输入图片说明](gitee/QQ%E6%88%AA%E5%9B%BE20220104110950.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160352.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160413.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160425.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160444.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160509.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160656.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160707.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160717.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160735.png)
+![输入图片说明](https://github.com/a3318375/github-img/blob/main/QQ截图20220218160755.png)
