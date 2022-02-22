@@ -12,7 +12,7 @@ const { data } = await useFetch('/config/findAll', {
 <template>
   <div class="pt-4 text-center">
     <footer class="text-white">
-      <p><a href="http://www.beian.miit.gov.cn" target="_blank">{{data.data.WEB_ICP}}</a></p>
+      <p><a href="https://beian.miit.gov.cn" target="_blank">{{data.data.WEB_ICP}}</a></p>
       <p>{{data.data.WEB_NAME}} ©2021 Created by {{data.data.WEB_ADMIN_NAME}}</p>
     </footer>
   </div>
