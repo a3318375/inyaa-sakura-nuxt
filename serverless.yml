@@ -27,7 +27,7 @@ inputs:
     environment: release
     # 自定义域名相关配置
     customDomains:
-      - domain: csf.inyaa.cn
+      - domain: csf.inyaw.com
         certificateId: tkqlKpga # 证书 ID
         protocols:
             - https

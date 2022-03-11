@@ -1,7 +1,7 @@
 <script setup>
 let page = 0
 const { data } = await useFetch('/config/findAll', {
-  baseURL: 'https://www.inyaa.cn/inyaa-gateway/inyaa-admin',
+  baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
   method: 'GET',
   params: {
     type: 0

@@ -2,7 +2,7 @@
 useMeta({
   title: '瑶瑶的梦中小屋',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/icon/favicon.ico'}
+    {rel: 'icon', href: 'https://media.inyaw.com/icon/favicon.ico'}
   ],
   meta: [
     { name: 'keywords', content: '瑶瑶,梦中小屋,瑶瑶的梦中小屋' },

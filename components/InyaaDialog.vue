@@ -8,11 +8,11 @@ isLogin.value = isLogin.value || false
 
 function qqLogin() {
   oldUrl.value = window.location.href
-  window.location.href = 'https://api.inyaa.cn/inyaa-web/oauth2/authorization/qq'
+  window.location.href = 'https://api.inyaw.com/inyaa-web/oauth2/authorization/qq'
 }
 function githubLogin() {
   oldUrl.value = window.location.href
-  window.location.href = 'https://api.inyaa.cn/inyaa-web/oauth2/authorization/github'
+  window.location.href = 'https://api.inyaw.com/inyaa-web/oauth2/authorization/github'
 }
 console.log(1, oldUrl)
 console.log(2, user)
@@ -24,7 +24,7 @@ onMounted(async () => {
       console.log(4, '存在未跳转的链接')
       if (!user || !user.value) {
         const data = await $fetch('/user', {
-          baseURL: 'https://api.inyaa.cn/inyaa-web',
+          baseURL: 'https://api.inyaw.com/inyaa-web',
           credentials: "include",
           method: 'GET'
         })
@@ -133,7 +133,7 @@ onMounted(async () => {
                             <div>
                               <a href="#" title="使用 QQ 帐号登录" @click="qqLogin" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
                                 <span class="sr-only">Sign in with QQ</span>
-                                <img src="https://media.inyaa.cn/QQ.png" class="w-5 h-5" />
+                                <img src="https://media.inyaw.com/QQ.png" class="w-5 h-5" />
                               </a>
                             </div>
 

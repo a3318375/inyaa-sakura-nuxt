@@ -7,7 +7,7 @@ const subComment = async() => {
     alert('请先登陆')
   }
   await $fetch('/blog/comment/save', {
-    baseURL: 'https://api.inyaa.cn/inyaa-web',
+    baseURL: 'https://api.inyaw.com/inyaa-web',
     credentials: "include",
     method: 'POST',
     body: {

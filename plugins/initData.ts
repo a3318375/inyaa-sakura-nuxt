@@ -4,7 +4,7 @@ export default defineNuxtPlugin(async () => {
     const data = useState("menuData", () => []);
 
     data.value = await $fetch('/menu/findMenuList', {
-        baseURL: 'https://www.inyaa.cn/inyaa-gateway/inyaa-admin',
+        baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
         params: {
             enable: true
         },

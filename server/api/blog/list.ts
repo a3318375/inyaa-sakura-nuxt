@@ -2,7 +2,7 @@ import { useQuery } from 'h3'
 export default async (req, res) => {
     const params = await useQuery(req);
     const data = await $fetch('/blog/web/list', {
-        baseURL: 'https://www.inyaa.cn/inyaa-gateway/inyaa-admin',
+        baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
         method: 'GET',
         params: params
     }).then(res => {

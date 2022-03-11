@@ -10,7 +10,7 @@ let userInfo = {
   name: 'Tom Cook',
   email: 'tom@example.com',
   imageUrl:
-      'https://media.inyaa.cn/none.png',
+      'https://media.inyaw.com/none.png',
 }
 if (user && user.value) {
   userInfo = user.value
@@ -56,7 +56,7 @@ function initAudio() {
       {
         name: "星茶会",
         artist: "灰澈-星茶会",
-        url: "https://media.inyaa.cn/test_music.mp3",
+        url: "https://media.inyaw.com/test_music.mp3",
         cover: "http://imge.kugou.com/stdmusic/150/20200812/20200812134914113741.jpg",
         lrc: "",
         theme: "#baf",

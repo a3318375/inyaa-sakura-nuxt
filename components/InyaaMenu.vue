@@ -8,7 +8,7 @@ let userInfo = {
   name: 'Tom Cook',
   email: 'tom@example.com',
   imageUrl:
-      'https://media.inyaa.cn/none.png',
+      'https://media.inyaw.com/none.png',
 }
 if (user && user.value) {
   userInfo = user.value
@@ -60,7 +60,7 @@ const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenu
   </div>
   <div :class="[ mobileMenuShow ? 'fixed z-777 bg-white w-250px h-full transition duration-300' : 'fixed z-777 bg-white w-250px h-full transition duration-300 transform -translate-x-250px']">
     <div class="py-40px w-250px mx-75px">
-      <img class="rounded-full w-100px h-100px" src="https://media.inyaa.cn/icon/99db72d3abaaef4beece7e9f94b3623.jpg" />
+      <img class="rounded-full w-100px h-100px" src="https://media.inyaw.com/icon/99db72d3abaaef4beece7e9f94b3623.jpg" />
     </div>
     <ul>
       <li v-for="menu in data" class="text-center py-1">
@@ -71,7 +71,7 @@ const { mobileMenuShow, updateMobileMenu, updateMobileMenuHide } = useMobileMenu
   <header :class="[show ? 'top-menu left-menu fixed h-75px w-95p hidden md:block hover:bg-white hover:bg-opacity-80 rounded-full z-888' : 'top-menu left-smenu fixed h-75px w-1/2 hidden md:block hover:bg-white hover:bg-opacity-80 rounded-full bg-white bg-opacity-80 z-888']">
     <div class="px-20px">
       <div class="group float-right ml-20px mt-22px relative" @mouseover="showLoginMenu" @mouseleave="hideLoginMenu">
-        <img class="faa-shake animated-hover" src="https://media.inyaa.cn/none.png" width="24" height="24" @click="toLogin">
+        <img class="faa-shake animated-hover" src="https://media.inyaw.com/none.png" width="24" height="24" @click="toLogin">
         <div id="loginUserMenu" class="absolute w-90px top-44px -right-11px invisible opacity-0 transform -translate-y-20px transition duration-500 group-hover:translate-y-0"
              @mouseover="showLoginMenu"
              @mouseleave="hideLoginMenu">

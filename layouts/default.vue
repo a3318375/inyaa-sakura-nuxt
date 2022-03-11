@@ -24,7 +24,7 @@ onMounted(async () => {
   document.addEventListener("scroll", handleScroll);
   new l2dViewer({
     el: document.getElementById('L2dCanvas'), // 要添加Live2d的元素, 支持dom选择器和jq选择器
-    basePath: 'https://www.inyaa.cn/lv2d/live2d/model', // 模型根目录
+    basePath: 'https://www.inyaw.com/lv2d/live2d/model', // 模型根目录
     width: 800,
     height: 600,
     modelName: 'xuefeng_3', // 模型名称

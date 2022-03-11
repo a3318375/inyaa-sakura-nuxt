@@ -3,14 +3,14 @@ const route = useRoute();
 const nuxtApp = useNuxtApp();
 
 const { data } = await useFetch("/blog/web/archive/list", {
-  baseURL: "https://www.inyaa.cn/inyaa-gateway/inyaa-admin",
+  baseURL: "https://www.inyaw.com/inyaa-gateway/inyaa-admin",
   method: "GET",
 });
 
 useMeta({
   title: '搜索',
   link: [
-    {rel: 'icon', href: 'https://media.inyaa.cn/icon/favicon.ico'}
+    {rel: 'icon', href: 'https://media.inyaw.com/icon/favicon.ico'}
   ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
@@ -39,7 +39,7 @@ updateArticleMouseoverShow()
             <span>
               <img
                   class="w-9 h-9 align-middle float-none inline rounded-full"
-                  src="https://media.inyaa.cn/icon/99db72d3abaaef4beece7e9f94b3623.jpg"
+                  src="https://media.inyaw.com/icon/99db72d3abaaef4beece7e9f94b3623.jpg"
               />
             </span>
             <span> bymoye </span>
