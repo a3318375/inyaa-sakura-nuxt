@@ -16,6 +16,7 @@ const { data } = await useFetch('/config/findAll', {
     return {};
   }
 })
+console.log(123, data)
 </script>
 
 <template>
