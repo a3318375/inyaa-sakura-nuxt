@@ -1,6 +1,6 @@
 <script setup>
-let page = 0
-const { data } = await useFetch('/config/findAll', {
+const {data} = await useAsyncData('configInfo', () => $fetch('/config/findAl', {
+  parseResponse: JSON.parse,
   baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
   method: 'GET',
   params: {
@@ -15,8 +15,7 @@ const { data } = await useFetch('/config/findAll', {
   } else {
     return {};
   }
-})
-console.log(123, data)
+}))
 </script>
 
 <template>
