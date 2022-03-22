@@ -25,11 +25,26 @@ const nextPage = async () => {
   blogList.value = [...blogList.value, ...content]
 }
 
-const {data} = await useAsyncData('blogList', () => $fetch('/api/blog/list', {
-  method: "GET",
+const data = await useFetch('/blog/web/list', {
+  parseResponse: JSON.parse,
+  baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
+  method: 'GET',
   params: params,
-}))
-blogList.value = data.value.content
+}).then(r => {
+  if (!r) {
+    return {};
+  }
+  if (!r.data || !r.data.value) {
+    return {};
+  }
+  if (r.data.value.code && r.data.value.code === 200) {
+    return r.data.value.data
+  } else {
+    return {};
+  }
+})
+console.log('blogList', data)
+blogList.value = data.content
 </script>
 
 <template>

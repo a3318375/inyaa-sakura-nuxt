@@ -2,11 +2,11 @@
 const nuxtApp = useNuxtApp();
 const route = useRoute();
 const {toOpen} = useDialog()
-const {tocShow, updateTocShow, updateTocHide} = useTocMenuHide();
-const {data} = await useAsyncData('blogInfo', () => $fetch('/blog/web/info', {
+const {tocShow, updateTocShow} = useTocMenuHide();
+const data = await useFetch('/blog/web/info', {
   parseResponse: JSON.parse,
   baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
-  method: "GET",
+  method: 'GET',
   params: {
     id: route.params.id,
   },
@@ -14,25 +14,27 @@ const {data} = await useAsyncData('blogInfo', () => $fetch('/blog/web/info', {
   if (!r) {
     return {};
   }
-  if (r.code && r.code === 200) {
-    return r.data
+  if (!r.data || !r.data.value) {
+    return {};
+  }
+  if (r.data.value.code && r.data.value.code === 200) {
+    return r.data.value.data
   } else {
     return {};
   }
-}))
-
+})
+console.log('blogInfo', data)
 useMeta({
-  title: data.value ? data.value.title : '瑶瑶的梦中小屋',
+  title: data.value ? data.title : '瑶瑶的梦中小屋',
   link: [
     {rel: 'icon', href: 'https://media.inyaw.com/icon/favicon.ico'}
   ],
   meta: [
     {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1'},
-    {name: 'keywords', content: data.value ? data.value.title : '瑶瑶的梦中小屋'},
-    {name: 'description', content: data.value ? data.value.summary : '瑶瑶的梦中小屋，一个个人小站.'},
+    {name: 'keywords', content: data ? data.title : '瑶瑶的梦中小屋'},
+    {name: 'description', content: data ? data.summary : '瑶瑶的梦中小屋，一个个人小站.'},
   ],
 })
-console.log(data.value.title)
 onMounted(async () => {
   window.toCopy = toCopy
 })

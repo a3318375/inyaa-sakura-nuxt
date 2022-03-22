@@ -14,9 +14,7 @@ function githubLogin() {
   oldUrl.value = window.location.href
   window.location.href = 'https://api.inyaw.com/inyaa-web/oauth2/authorization/github'
 }
-console.log(1, oldUrl)
-console.log(2, user)
-console.log(2.5, isLogin)
+
 onMounted(async () => {
   if (!isLogin.value) {
     console.log(3, '初始化')
