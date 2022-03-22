@@ -106,7 +106,7 @@ function showBlur(type) {
         <!-- Replace with your content -->
         <div class="px-5 py-8 bg-white bg-opacity-80">
           <div class="pt-4">
-            <article class="prose max-w-none" v-html="data.context ? nuxtApp.$markit.render(data.context): '' ">
+            <article class="prose max-w-none" v-html="data.article ? nuxtApp.$markit.render(data.article.context): '' ">
             </article>
           </div>
           <section class="overflow-hidden w-full mt-6 rounded-xl bg-gray-400 h-150px">
