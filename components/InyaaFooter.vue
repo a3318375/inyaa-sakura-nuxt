@@ -1,12 +1,13 @@
 <script setup>
-const {data} = await useAsyncData('configInfo', () => $fetch('/config/findAl', {
-  parseResponse: JSON.parse,
+let page = 0
+const { data } = await useFetch('/config/findAll', {
   baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
   method: 'GET',
   params: {
     type: 0
   }
 }).then(r => {
+  console.log(111, r)
   if (!r) {
     return {};
   }
@@ -15,14 +16,14 @@ const {data} = await useAsyncData('configInfo', () => $fetch('/config/findAl', {
   } else {
     return {};
   }
-}))
+})
 </script>
 
 <template>
   <div class="pt-4 text-center">
     <footer class="text-white">
-      <p><a href="https://beian.miit.gov.cn" target="_blank">{{data?.WEB_ICP}}</a></p>
-      <p>{{data?.WEB_NAME}} ©2021 Created by {{data?.WEB_ADMIN_NAME}}</p>
+      <p><a href="https://beian.miit.gov.cn" target="_blank">{{data.WEB_ICP}}</a></p>
+      <p>{{data.WEB_NAME}} ©2021 Created by {{data.WEB_ADMIN_NAME}}</p>
     </footer>
   </div>
 </template>
