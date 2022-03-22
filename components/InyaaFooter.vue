@@ -1,13 +1,11 @@
 <script setup>
-let page = 0
-const { data } = await useFetch('/config/findAll', {
+const data = await useFetch('/config/findAll', {
   baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
   method: 'GET',
   params: {
     type: 0
   }
 }).then(r => {
-  console.log(111, r)
   if (!r) {
     return {};
   }
