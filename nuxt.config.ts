@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   publicRuntimeConfig: {
     BASE_URL: process.env.BASE_URL
   },
+  build: {
+      transpile: ['@headlessui/vue']
+  },
   buildModules: [
     'nuxt-windicss',
     '@unocss/nuxt',
