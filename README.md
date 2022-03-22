@@ -20,10 +20,10 @@ inyaa-sakura-nuxt是inyaa系列的博客前端采用了nuxt3，vue3，ts等技�
 
 实际上，大部分api都在CRM后端API这里，博客后端API只有评论功能。
 
-> CRM后端API: [https://git.inyaw.com/a3318375/inyaa-admin](https://git.inyaw.com/a3318375/inyaa-admin)<br/>
-> spring网关: [https://git.inyaw.com/a3318375/inyaa-gateway](https://git.inyaw.com/a3318375/inyaa-gateway)<br/>
-> 博客后端API: [https://git.inyaw.com/a3318375/inyaa-web](https://git.inyaw.com/a3318375/inyaa-web)<br/>
-> 图片服务: [https://git.inyaw.com/a3318375/inyaa-picture](https://git.inyaw.com/a3318375/inyaa-picture)
+> CRM后端API: [https://github.com/a3318375/inyaa-admin](https://github.com/a3318375/inyaa-admin)<br/>
+> spring网关: [https://github.com/a3318375/inyaa-gateway](https://github.com/a3318375/inyaa-gateway)<br/>
+> 博客后端API: [https://github.com/a3318375/inyaa-web](https://github.com/a3318375/inyaa-web)<br/>
+> 图片服务: [https://github.com/a3318375/inyaa-picture](https://github.com/a3318375/inyaa-picture)
 
 # 二次开发
 
