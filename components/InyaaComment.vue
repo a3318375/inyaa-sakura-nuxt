@@ -2,12 +2,12 @@
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
 const nuxtApp = useNuxtApp();
 const route = useRoute();
-const commonts = await $fetch('/blog/comment/list', {
-  baseURL: 'https://api.inyaw.com/inyaa-web',
+const commonts = await $fetch('/blog/web/comment/list', {
+  baseURL: 'https://api.inyaw.com/inyaa-admin',
   credentials: "include",
   method: 'GET',
   params: {
-    blogId: route.params.id,
+    id: route.params.id,
   },
 })
 const commontList = [...commonts.data.content]

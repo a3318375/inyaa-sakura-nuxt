@@ -5,7 +5,7 @@ export default defineNuxtPlugin(async () => {
 
     data.value = await useFetch('/menu/findMenuList', {
         parseResponse: JSON.parse,
-        baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
+        baseURL: 'https://api.inyaw.com/inyaa-admin',
         method: 'GET',
         params: {
             enable: true

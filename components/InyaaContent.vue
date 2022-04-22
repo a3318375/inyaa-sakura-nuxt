@@ -27,7 +27,7 @@ const nextPage = async () => {
 
 const data = await useFetch('/blog/web/list', {
   parseResponse: JSON.parse,
-  baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
+  baseURL: 'https://api.inyaw.com/inyaa-admin',
   method: 'GET',
   params: params,
 }).then(r => {

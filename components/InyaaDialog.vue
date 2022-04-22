@@ -8,7 +8,7 @@ isLogin.value = isLogin.value || false
 
 function qqLogin() {
   oldUrl.value = window.location.href
-  window.location.href = 'https://api.inyaw.com/inyaa-web/oauth2/authorization/qq'
+  window.location.href = 'https://api.inyaw.com/inyaa-admin/login'
 }
 function githubLogin() {
   oldUrl.value = window.location.href

@@ -1,7 +1,7 @@
 <script setup>
 const data = await useFetch('/config/findAll', {
   parseResponse: JSON.parse,
-  baseURL: 'https://www.inyaw.com/inyaa-gateway/inyaa-admin',
+  baseURL: 'https://api.inyaw.com/inyaa-admin',
   method: 'GET',
   params: {
     type: 0
