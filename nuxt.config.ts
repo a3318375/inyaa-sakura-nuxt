@@ -14,13 +14,13 @@ export default defineNuxtConfig({
   ],
   meta: {
     script: [
-      { src: 'https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js' },
-      { src: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js' },
-      { src: 'https://cdn.jsdelivr.net/npm/pixi.js@4.6.1/dist/pixi.min.js' },
-      { src: 'https://cdn.jsdelivr.net/npm/live2dv3@1.2.2/live2dv3.min.js' },
+      { src: 'https://media.inyaw.com/css/APlayer/APlayer.min.js' },
+      { src: 'https://media.inyaw.com/css/lv2d/live2dcubismcore.min.js' },
+      { src: 'https://media.inyaw.com/css/lv2d/pixi.min.js' },
+      { src: 'https://media.inyaw.com/css/lv2d/live2dv3.min.js' },
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/a3318375/APlayer@1.11/dist/APlayer.min.css' },
+      { rel: 'stylesheet', href: 'https://media.inyaw.com/css/APlayer/APlayer.min.css' },
     ],
   },
   css: [
